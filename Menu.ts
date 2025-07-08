@@ -1,9 +1,17 @@
 import readLine = require('readline-sync');
 import { colors } from './src/util/Colors';
+import { Conta } from './src/model/Conta';
 
 export function main() {
 
     let opcao: number;
+
+    const conta: Conta = new Conta(1, 123, 1, "Renato", 10000);
+    conta.visualizar();
+    conta.sacar(3150);
+    conta.visualizar();
+    conta.depositar(5000);
+    conta.visualizar();
 
     while (true) {
 
@@ -40,48 +48,48 @@ export function main() {
 
         switch (opcao) {
             case 1:
-                console.log(colors.fg.whitestrong,`\n\nCriar Conta\n\n`,colors.reset);
+                console.log(colors.fg.whitestrong, `\n\nCriar Conta\n\n`, colors.reset);
 
                 keyPress()
                 break;
             case 2:
-                console.log(colors.fg.whitestrong,`\n\nListar todas as Contas\n\n`,colors.reset);
+                console.log(colors.fg.whitestrong, `\n\nListar todas as Contas\n\n`, colors.reset);
 
                 keyPress()
                 break;
             case 3:
-                console.log(colors.fg.whitestrong,`\n\nConsultar dados da Conta - por número\n\n`,colors.reset);
+                console.log(colors.fg.whitestrong, `\n\nConsultar dados da Conta - por número\n\n`, colors.reset);
 
                 keyPress()
                 break;
             case 4:
-                console.log(colors.fg.whitestrong,`\n\nAtualizar dados da Conta\n\n`,colors.reset);
+                console.log(colors.fg.whitestrong, `\n\nAtualizar dados da Conta\n\n`, colors.reset);
 
                 keyPress()
                 break;
             case 5:
-                console.log(colors.fg.whitestrong,`\n\nApagar uma Conta\n\n`,colors.reset);
+                console.log(colors.fg.whitestrong, `\n\nApagar uma Conta\n\n`, colors.reset);
 
                 keyPress()
                 break;
             case 6:
-                console.log(colors.fg.whitestrong,`\n\nSaque\n\n`,colors.reset);
+                console.log(colors.fg.whitestrong, `\n\nSaque\n\n`, colors.reset);
 
                 keyPress()
                 break;
             case 7:
-                console.log(colors.fg.whitestrong,`\n\nDepósito\n\n`,colors.reset);
+                console.log(colors.fg.whitestrong, `\n\nDepósito\n\n`, colors.reset);
 
                 keyPress()
                 break;
             case 8:
-                console.log(colors.fg.whitestrong,`\n\nTransferêmcia entre Contas\n\n`,colors.reset);
+                console.log(colors.fg.whitestrong, `\n\nTransferêmcia entre Contas\n\n`, colors.reset);
 
                 keyPress()
                 break;
             default:
-                console.log(colors.fg.whitestrong,`\nOpção Inválida!\n`,colors.reset);
-                
+                console.log(colors.fg.whitestrong, `\nOpção Inválida!\n`, colors.reset);
+
                 keyPress()
                 break;
         }
@@ -102,9 +110,9 @@ export function sobre(): void {
 .::    .: ::.::     .::.::      .::      .:      .: .::       .:: .::    .: ::.::   .::  
 .::      .::  .:::::   .::::::::.::::::::.:::: .:: .::         .::.::      .::.::     .::
                                                                                           `)
-    console.log(colors.fg.whitestrong,`\nProjeto Desenvolvido por: Matheus Pereira Xavier`);
+    console.log(colors.fg.whitestrong, `\nProjeto Desenvolvido por: Matheus Pereira Xavier`);
     console.log(`\nEmail: matheus97p.q@gmail.com`);
-    console.log(`\nGitHub: github.com/Matheus97px`,colors.reset);
+    console.log(`\nGitHub: github.com/Matheus97px`, colors.reset);
     console.log(`\n------------------------------------------------------------------------------------------`);
 }
 
